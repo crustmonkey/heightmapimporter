@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSExampleMods", "VSExampleMods.csproj", "{203DFBF1-3599-43FD-8487-E1C79C2B788F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSHeightmapImporter", "VSHeightmapImporter.csproj", "{203DFBF1-3599-43FD-8487-E1C79C2B788F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,5 +21,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8FA69F6F-B9C3-4ED6-B28C-1141E0B1D83F}
 	EndGlobalSection
 EndGlobal

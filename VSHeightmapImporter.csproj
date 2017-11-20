@@ -53,12 +53,14 @@
       <HintPath>..\..\..\AppData\Roaming\Vintagestory\VintagestoryAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="VSWorldEdit">
+      <HintPath>..\..\..\AppData\Roaming\Vintagestory\Mods\VSWorldEdit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NetworkApiTest.cs" />
+    <Compile Include="HeightmapImporterTool.cs" />
     <Compile Include="RedirectLogs.cs" />
-    <Compile Include="VillageGenerator.cs" />
-    <Compile Include="OldWorldEdit.cs" />
+    <Compile Include="HeightmapImporterModBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
