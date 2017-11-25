@@ -66,6 +66,8 @@ namespace Vintagestory.HeightmapImporter
             int length = heights.GetLength(1);
             BlockPos tmpPos = new BlockPos();
 
+            IBlockAccessor blockAccessorBulk = worldEdit.sapi.World.BulkBlockAccessor;
+
             for (int x = 0; x < width; x++)
             {
                 for (int z = 0; z < length; z++)
@@ -76,13 +78,15 @@ namespace Vintagestory.HeightmapImporter
                     
                     for (int y = 0; y < height; y++)
                     {
-                        blockAccess.SetBlock(block.BlockId, tmpPos);
+                        blockAccessorBulk.SetBlock(block.BlockId, tmpPos);
                         tmpPos.Up();
                     }
                 }
             }
 
-            return true;
+            blockAccessorBulk.Commit();
+
+            return false;
         }
 
 
