@@ -1,5 +1,6 @@
 ﻿using System;
 using Vintagestory.API.Common;
+
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 
@@ -8,9 +9,10 @@ namespace Vintagestory.HeightmapImporter
     /// <summary>
     /// Super basic example on how to set blocks in the game
     /// </summary>
-    public class HeightmapImporterToolModBase : ModBase
+    public class HeightmapImporterToolModBase : ModSystem
     {
         ICoreServerAPI api;
+        //IModLoader api;
 
         public override double ExecuteOrder()
         {
@@ -21,9 +23,9 @@ namespace Vintagestory.HeightmapImporter
         {
             this.api = api;
 
-            if (api.IsModAvailable("Vintagestory.ServerMods.WorldEdit.WorldEdit"))
+            if (api.ModLoader.IsModSystemEnabled("Vintagestory.ServerMods.WorldEdit.WorldEdit"))
             {
-                RegisterUtil.RegisterTool(api.GetMod("Vintagestory.ServerMods.WorldEdit.WorldEdit"));
+                RegisterUtil.RegisterTool(api.ModLoader.GetModSystem("Vintagestory.ServerMods.WorldEdit.WorldEdit"));
             }
         }
 

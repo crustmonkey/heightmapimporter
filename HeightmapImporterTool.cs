@@ -13,7 +13,7 @@ namespace Vintagestory.HeightmapImporter
 {
     public static class RegisterUtil
     {
-        public static void RegisterTool(ModBase mod)
+        public static void RegisterTool(ModSystem mod)
         {
             ((WorldEdit)mod).RegisterTool("HeightmapImporter", typeof(HeightmapImporterTool));
         }
@@ -56,7 +56,7 @@ namespace Vintagestory.HeightmapImporter
         }
 
 
-        public override bool ApplyToolBuild(WorldEdit worldEdit, Block block, BlockPos pos, ushort oldBlockId, BlockFacing onBlockFace, Vec3f hitPos, bool didOffset)
+        public override bool ApplyToolBuild(WorldEdit worldEdit, Block block/*, BlockPos pos*/, ushort oldBlockId,/* BlockFacing onBlockFace, Vec3f hitPos, bool didOffset*/ BlockSelection blockSel, BlockPos targetPos, ItemStack withItemStack)
         {
             if (heights == null) return false;
 
@@ -74,7 +74,7 @@ namespace Vintagestory.HeightmapImporter
                 {
                     int height = heights[x, z];
 
-                    tmpPos.Set(pos.X + x - width / 2, pos.Y, pos.Z + z - length / 2);
+                    tmpPos.Set(targetPos.X + x - width / 2, targetPos.Y, targetPos.Z + z - length / 2);
                     
                     for (int y = 0; y < height; y++)
                     {
